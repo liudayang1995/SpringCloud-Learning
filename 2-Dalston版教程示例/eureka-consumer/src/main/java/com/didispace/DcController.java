@@ -23,6 +23,11 @@ public class DcController {
     @GetMapping("/consumer")
     public String dc() {
     	int i = 111;
+    	int q = 111;
+    	int w = 111;
+    	int e = 111;
+    	int r = 111;
+    	int t = 111;
         ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client");
         String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/dc";
         System.out.println(url);
