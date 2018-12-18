@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author 翟永超
+ * @author 缈熸案瓒�
  * @create 2017/4/15.
  * @blog http://blog.didispace.com
  */
@@ -22,6 +22,7 @@ public class DcController {
 
     @GetMapping("/consumer")
     public String dc() {
+    	int i = 111;
         ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client");
         String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/dc";
         System.out.println(url);
